@@ -1,25 +1,26 @@
-<table width="100%">
-<tr>
-<td align="left" width="50%">
-<img src="chemin/vers/logo.png" width="120"/>
-</td>
-<td align="right" width="50%">
-<img src="chemin/vers/photo.jpg" width="120"/>
-</td>
-</tr>
-</table>
+<p align="left">
+  <img src="https://github.com/Asmaehassi/Version-finale/blob/main/LA%20PHOTO.jpeg" alt="Photo étudiante" width="100"/>
+</p>
 
-<br><br>
+<p align="right">
+  <img src="https://github.com/Asmaehassi/Version-finale/blob/main/logo%20(2).png" alt="Logo ENCG Settat" width="120"/>
+</p>
 
-**ENCG SETTAT** 
+
+
 
 ---
 
 #  Rapport de Projet
 
-**Titre du Projet :** Détection du  risque de maladie cardiaque
+**Titre du projet :** Détection du  risque de maladie cardiaque
 
-**Nom de l'étudiante :** Asmae Hassi  
+**Rapport machine learning : Détection du risque
+de maladie cardiaque**
+
+**Elaboré par :** Asmae Hassi  
+**Encadré par :** Pr.LARHLIMI
+
 **Numéro Apogée :** 24010417  
 
   
@@ -34,18 +35,18 @@
 # Sommaire
 
 1. [Introduction](#1-introduction)
-2. [Chargement des Packages](#2-chargement-des-packages)
-3. [Chargement du Jeu de Données](#3-chargement-du-jeu-de-données)
-4. [Nettoyage et Préparation des Données](#4-nettoyage-et-préparation-des-données)
-5. [Analyse Exploratoire (EDA)](#5-analyse-exploratoire-eda)
+2. [Chargement des packages](#2-chargement-des-packages)
+3. [Chargement du jeu de données](#3-chargement-du-jeu-de-données)
+4. [Nettoyage et préparation des Données](#4-nettoyage-et-préparation-des-données)
+5. [Analyse exploratoire (EDA)](#5-analyse-exploratoire-eda)
 6. [Modélisation Machine Learning : Random Forest](#6-modélisation-machine-learning--random-forest)
-7. [Évaluation du Modèle](#7-évaluation-du-modèle)
+7. [Évaluation du modèle](#7-évaluation-du-modèle)
 8. [Visualisations](#8--visualisations)
    - [Distribution de l'âge selon la présence de maladie](#81-distribution-de-lâge-selon-la-présence-de-maladie)
-   - [Matrice de Confusion](#82-matrice-de-confusion)
+   - [Matrice de confusion](#82-matrice-de-confusion)
    - [Courbe ROC](#83-courbe-roc)
    - [Heatmap de corrélation](#84-heatmap-de-corrélation)
-9. [Conclusion Générale](#conclusion-générale)
+9. [Conclusion générale](#conclusion-générale)
 
 
 ##  **1. Introduction**
@@ -70,14 +71,14 @@ Paramètres d'effort avancés : pente du segment ST (descendante, plate ou ascen
 
 Imagerie médicale : nombre de vaisseaux coronaires majeurs visualisés par fluoroscopie (0 à 3), résultat du test au thallium d'effort (3 interprétations possibles)
 
-### Variable Cible
+### Variable cible
 La colonne target est codée :
 
 0 : absence de maladie cardiaque (138 patients)
 
 1 : présence de maladie cardiaque (165 patients)
 
-### Valeur Analytique
+### Valeur analytique
 Ce dataset présente plusieurs atouts pour la modélisation prédictive :
 
 Variables hétérogènes : mélange de données continues (âge, cholestérol), ordinales (nombre de vaisseaux) et catégorielles (type de douleur)
@@ -103,7 +104,7 @@ Ce rapport détaille le cycle complet :
 
 ---
 
-##  **2. Chargement des Packages**
+##  **2. Chargement des packages**
 
 Nous avons utilisé les bibliothèques suivantes :
 
@@ -129,7 +130,7 @@ Ces packages permettent :
 
 ---
 
-##  **3. Chargement du Jeu de Données**
+##  **3. Chargement du jeu de données**
 
 Le dataset est téléchargé automatiquement depuis Kaggle :
 
@@ -156,7 +157,7 @@ La cible (*target*) vaut :
 
 ---
 
-##  **4. Nettoyage et Préparation des Données**
+##  **4. Nettoyage et préparation des données**
 
 Les données réelles contiennent souvent des valeurs manquantes. Pour simuler cela, nous avons ajouté 5% de NaN volontairement.
 
@@ -173,7 +174,7 @@ X_clean = pd.DataFrame(imputer.fit_transform(X), columns=X.columns)
 
 -Aucun NaN restant
 
-#  **5. Analyse Exploratoire (EDA)**
+#  **5. Analyse exploratoire (EDA)**
 ###  **Statistiques descriptives**
 Nous observons les moyennes, médianes et écarts-types pour identifier :
 - colonnes à forte variance → informatives pour le modèle
@@ -206,7 +207,7 @@ model.fit(X_train, y_train)
 - évite l’overfitting grâce à l’agrégation d’arbres
 
 ---
-##  **7. Évaluation du Modèle**
+##  **7. Évaluation du modèle**
 ###  **Accuracy**
 Le modèle atteint une précision très élevée (>95%), cohérente avec la matrice de confusion et l’AUC.
 
@@ -223,7 +224,7 @@ Montre :
 - les prédictions correctes (diagonales)
 - les erreurs du modèle (hors diagonale)
 
-###  **Courbe ROC + AUC**
+###  **Courbe ROC et AUC**
 La courbe ROC permet d’évaluer la qualité du classement.  
 Un **AUC > 0.85** indique un modèle performant.
 
@@ -238,7 +239,7 @@ Un **AUC > 0.85** indique un modèle performant.
 **Interprétation :**
 Le graphique montre que les personnes atteintes de maladie cardiaque sont majoritairement âgées de 45 à 60 ans, tandis que les individus sains sont davantage concentrés autour de 55 à 65 ans. Cela indique que le risque de maladie cardiaque apparaît plus fréquemment dès la cinquantaine dans ce jeu de données..
 
-### 8.2 Matrice de Confusion
+### 8.2 Matrice de confusion
 <img width="528" height="479" alt="image" src="https://github.com/user-attachments/assets/1809da16-7032-4b96-bac4-1ad53b028a15" />
 
 **Interprétation :**
