@@ -55,14 +55,14 @@ La maladie cardiaque est l’une des premières causes de mortalité dans le mon
 
 Le jeu de données Heart Disease comprend 303 observations (patients) et 14 variables, dont 13 caractéristiques explicatives et une variable cible binaire indiquant la présence ou l'absence de maladie cardiaque. Chaque ligne représente un patient avec des informations cliniques standardisées couvrant trois grandes catégories :
 
-### Variables Cliniques et Démographiques
+### Variables cliniques et démographiques
 Données démographiques : âge (en années) et sexe (codé 1 pour homme, 0 pour femme)
 
 Symptômes rapportés : type de douleur thoracique (4 catégories distinctes)
 
 Mesures physiologiques : pression artérielle au repos (mmHg), cholestérol sérique (mg/dL), glycémie à jeun (seuil à 120 mg/dL)
 
-### Examens Cardio-spécifiques
+### Examens cardio-spécifiques
 Électrocardiogramme au repos (3 résultats possibles : normal, anomalie ST-T, suspicion d'hypertrophie ventriculaire gauche)
 
 Test d'effort : fréquence cardiaque maximale atteinte, présence d'angine induite par l'exercice, dépression du segment ST post-effort
