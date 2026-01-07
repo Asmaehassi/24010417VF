@@ -15,7 +15,7 @@ Il comprend la préparation des données, l’analyse exploratoire (EDA), la mod
 | `README.md`       | Ce fichier, qui présente le projet et son contenu.                                                         |                                                                
 | `logo (2).png`    | Logo de l’établissement.                                                                                   |
 | `pg.png`          | Image pour la page de garde du rapport.                                                                    |
-| `lavideo (2).mp4` | Vidéo complémentaire du projet.                                                                         |
+| `lavideo (2).mp4` | Vidéo explicative du projet.                                                                         |
                                                                          
 
 - Figures produites : ROC, matrice de confusion, matrice de corrélation, distribution de l’âge  
